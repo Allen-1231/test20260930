@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
@@ -9,424 +6,8 @@
 <title>漫威影視作品📘</title>
 
 <!--
-
     Tooplate 2167 Orbital
-
     https://www.tooplate.com/view/2167-orbital
-
-    Free HTML CSS Template
-
--->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tooplate-2167-orbital-style.css">
-<style>
-/* 繁體中文字型補強與階段詳情視窗（其餘樣式沿用模板 CSS） */
-body { font-family: 'Space Grotesk', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
-.logo, .nav-links a, .mobile-menu a, .eyebrow, .ctrl-label, .panel .p-num, .panel .p-meta,
-.f-index, .scroll-cue, .footer .credit, .pm-eyebrow, .pm-meta, .pm-tag, .pm-btn, .feature li span {
-  font-family: 'JetBrains Mono', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', monospace;
-}
-.panel .p-meta { font-size: 11px; }
-.hero-text p { max-width: 520px; line-height: 1.8; }
-.feature ul { list-style: none; margin-top: 18px; }
-.feature li { padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.94rem; }
-.feature li b { display: block; font-weight: 600; }
-.feature li span { display: block; font-size: 11px; letter-spacing: 1px; color: var(--faint); margin-top: 3px; }
-.feature .f-sub { margin-top: 20px; font-family: 'JetBrains Mono','Noto Sans TC',monospace; font-size: 11px; letter-spacing: 2px; color: var(--cyan); }
-
-body.modal-open { overflow: hidden; }
-.phase-modal {
-  position: fixed; inset: 0; z-index: 60;
-  display: flex; align-items: center; justify-content: center;
-  padding: 20px;
-  background: rgba(5, 5, 5, 0.82);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  opacity: 0; visibility: hidden;
-  transition: opacity 0.5s var(--ease), visibility 0.5s var(--ease);
-}
-.phase-modal.open { opacity: 1; visibility: visible; }
-.pm-card {
-  position: relative; width: 100%; max-width: 880px; max-height: 88vh; overflow-y: auto;
-  border-radius: 20px;
-  padding: 46px clamp(20px, 4vw, 44px) 32px;
-  background: rgba(14, 10, 26, 0.94);
-  border: 1px solid rgba(139, 92, 246, 0.4);
-  box-shadow: inset 0 0 44px rgba(139, 92, 246, 0.14), 0 0 60px rgba(6, 182, 212, 0.16);
-  transform: translateY(26px) scale(0.98);
-  transition: transform 0.7s var(--ease);
-  scrollbar-width: thin; scrollbar-color: rgba(139,92,246,0.5) transparent;
-}
-.phase-modal.open .pm-card { transform: none; }
-.pm-close {
-  position: absolute; top: 14px; right: 14px; width: 38px; height: 38px;
-  border-radius: 50%; cursor: pointer; color: var(--white); font-size: 16px;
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14);
-  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
-}
-.pm-close:hover, .pm-close:focus-visible { border-color: var(--cyan); box-shadow: 0 0 16px rgba(6,182,212,0.5); outline: none; }
-.pm-eyebrow { font-size: 12px; letter-spacing: 4px; color: var(--cyan); text-shadow: 0 0 14px rgba(6,182,212,0.6); margin-bottom: 14px; }
-.pm-card h2 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; text-shadow: 0 0 30px rgba(139,92,246,0.4); }
-.pm-sum { margin-top: 12px; color: var(--dim); font-size: 0.98rem; }
-.pm-group { margin-top: 34px; }
-.pm-group h3 { font-size: 12px; letter-spacing: 3px; font-weight: 500; color: var(--violet); margin-bottom: 14px; font-family: 'JetBrains Mono','Noto Sans TC',monospace; }
-.pm-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.pm-item {
-  padding: 20px 20px 18px; border-radius: 14px;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
-  transition: background 0.5s var(--ease), border-color 0.5s var(--ease);
-}
-.pm-item:hover { background: rgba(255,255,255,0.055); border-color: rgba(6,182,212,0.4); }
-.pm-item h4 { font-size: 1.1rem; font-weight: 600; line-height: 1.35; }
-.pm-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; font-size: 11px; letter-spacing: 1px; color: var(--faint); }
-.pm-tag { padding: 2px 9px; border-radius: 20px; font-size: 10px; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.18); color: var(--dim); }
-.pm-tag.done { color: var(--cyan); border-color: rgba(6,182,212,0.6); }
-.pm-tag.soon { color: #c4b5fd; border-color: rgba(139,92,246,0.7); }
-.pm-item p { margin-top: 12px; color: var(--dim); font-size: 0.9rem; line-height: 1.65; }
-.pm-stat { margin-top: 12px; font-size: 12px; letter-spacing: 1px; color: var(--cyan); font-family: 'JetBrains Mono','Noto Sans TC',monospace; }
-.pm-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 34px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.07); }
-.pm-btn {
-  font-size: 12px; letter-spacing: 2px; padding: 12px 22px; border-radius: 50px; cursor: pointer;
-  color: var(--white); background: rgba(255,255,255,0.04); border: 1px solid rgba(139,92,246,0.5);
-  transition: box-shadow 0.5s var(--ease), transform 0.5s var(--ease), opacity 0.4s;
-}
-.pm-btn:hover, .pm-btn:focus-visible { box-shadow: 0 0 24px rgba(139,92,246,0.5); transform: translateY(-2px); outline: none; }
-.pm-btn[disabled] { opacity: 0.25; pointer-events: none; }
-@media (max-width: 720px) {
-  .pm-list { grid-template-columns: 1fr; }
-  .pm-card { padding-top: 52px; }
-  .hero-controls { bottom: 70px; }
-}
-</style>
-</head>
-
-<body class="visuals-on">
-
-<div class="aura"></div>
-<div class="stars"></div>
-
-<nav class="nav">
-  <div class="logo"><a href="#" class="logo">MCU <span>// 漫威</span></a></div>
-  <ul class="nav-links">
-    <li><a href="#top">階段總覽</a></li>
-    <li><a href="#system">傳奇篇章</a></li>
-  </ul>
-  <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-menu">
-  <a href="#top">階段總覽</a>
-  <a href="#system">傳奇篇章</a>
-</div>
-
-<header class="hero" id="top">
-  <div class="stage">
-    <div class="parallax">
-      <div class="ring-tilt">
-        <div class="ring" id="ring">
-
-          <div class="panel" role="button" tabindex="0" data-phase="1" aria-label="查看第一階段的作品">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">01</div>
-              <div>
-                <div class="p-label">第一階段</div>
-                <div class="p-meta">無限傳奇 · 6 部</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-01.jpg" alt="第一階段" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">01</span>第一階段</div>
-            </div>
-          </div>
-
-          <div class="panel" role="button" tabindex="0" data-phase="2" aria-label="查看第二階段的作品">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">02</div>
-              <div>
-                <div class="p-label">第二階段</div>
-                <div class="p-meta">無限傳奇 · 6 部</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-02.jpg" alt="第二階段" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">02</span>第二階段</div>
-            </div>
-          </div>
-
-          <div class="panel" role="button" tabindex="0" data-phase="3" aria-label="查看第三階段的作品">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">03</div>
-              <div>
-                <div class="p-label">第三階段</div>
-                <div class="p-meta">無限傳奇 · 11 部</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-03.jpg" alt="第三階段" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">03</span>第三階段</div>
-            </div>
-          </div>
-
-          <div class="panel" role="button" tabindex="0" data-phase="4" aria-label="查看第四階段的作品">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">04</div>
-              <div>
-                <div class="p-label">第四階段</div>
-                <div class="p-meta">多重宇宙傳奇 · 15 部</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-04.jpg" alt="第四階段" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">04</span>第四階段</div>
-            </div>
-          </div>
-
-          <div class="panel" role="button" tabindex="0" data-phase="5" aria-label="查看第五階段的作品">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">05</div>
-              <div>
-                <div class="p-label">第五階段</div>
-                <div class="p-meta">多重宇宙傳奇 · 15 部</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-05.jpg" alt="第五階段" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">05</span>第五階段</div>
-            </div>
-          </div>
-
-          <div class="panel" role="button" tabindex="0" data-phase="6" aria-label="查看第六階段的作品">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">06</div>
-              <div>
-                <div class="p-label">第六階段</div>
-                <div class="p-meta">多重宇宙傳奇 · 10 部</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-06.jpg" alt="第六階段" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">06</span>第六階段</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="hero-text">
-        <div class="eyebrow">拖曳旋轉．點擊分頁進入階段</div>
-        <h1>漫威影視作品📘</h1>
-        <p>phase1 到 phase3 為無限傳奇<br>phase4 到 phase6 為多重宇宙傳奇<br>phase7 以後為變種人傳奇。</p>
-      </div>
-    </div>
-  </div>
-  <div class="hero-controls">
-    <div class="ctrl">
-      <span class="ctrl-label">圖片</span>
-      <button class="switch" id="visualsSwitch" role="switch" aria-checked="true" aria-label="切換圖片顯示">
-        <span class="knob"></span>
-      </button>
-    </div>
-    <div class="ctrl">
-      <span class="ctrl-label">放大</span>
-      <button class="switch" id="zoomSwitch" role="switch" aria-checked="false" aria-label="環形放大 24%">
-        <span class="knob"></span>
-      </button>
-    </div>
-    <div class="ctrl">
-      <span class="ctrl-label">間距</span>
-      <div class="spacing" role="group" aria-label="環形間距">
-        <button class="spacing-step" data-space="0" aria-label="緊密間距"><i></i></button>
-        <button class="spacing-step is-active" data-space="1" aria-label="預設間距"><i></i></button>
-        <button class="spacing-step" data-space="2" aria-label="寬鬆間距"><i></i></button>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-cue">
-    <span>向下捲動</span>
-    <div class="line"></div>
-  </div>
-</header>
-
-<section class="section" id="system">
-  <div class="section-head reveal">
-    <div class="eyebrow">// 傳奇篇章</div>
-    <h2>三大傳奇，串起整個漫威宇宙。</h2>
-    <p>以下依階段整理漫威影視宇宙的電影、影集與動畫影集，並依傳奇篇章分成三個部分。</p>
-  </div>
-  <div class="features" id="capabilities">
-    <div class="feature reveal">
-      <div class="f-index">01 // 無限傳奇</div>
-      <h3>第一至第三階段</h3>
-      <p>從《鋼鐵人》開始，到《蜘蛛人：離家日》為止，共 23 部電影，《復仇者聯盟：終局之戰》為無限傳奇的重要終章。</p>
-    </div>
-    <div class="feature reveal">
-      <div class="f-index">02 // 多重宇宙傳奇</div>
-      <h3>第四至第六階段</h3>
-      <p>影集與動畫影集加入陣容，目前共收錄 17 部電影與 23 部影集（含動畫影集），其中包含尚未上映的作品。</p>
-    </div>
-    <div class="feature reveal">
-      <div class="f-index">03 // 變種人傳奇</div>
-      <h3>第七階段以後</h3>
-      <p>目前規劃中的作品如下：</p>
-      <ul><li><b>X戰警</b><span>2028/5/5 · 製作中</span></li><li><b>黑豹3</b><span>2028/12/15 · 開發中</span></li><li><b>惡靈戰警</b><span>2028年 · 開發中</span></li></ul>
-      <div class="f-sub">階段未定</div>
-      <ul><li><b>裝甲戰爭</b><span>日期未定 · 開發中</span></li><li><b>未命名新星電影</b><span>日期未定 · 開發中</span></li><li><b>尚氣2</b><span>日期未定 · 開發中</span></li></ul>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="logo"><a href="#" class="logo">MCU <span>// 漫威</span></a></div>
-  <div class="credit">3D Orbital Carousel by <a href="https://www.tooplate.com" rel="nofollow noopener" target="_blank">Tooplate</a></div>
-</footer>
-
-<!-- 階段詳情視窗 -->
-<div class="phase-modal" id="phaseModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle" aria-hidden="true">
-  <div class="pm-card" id="pmCard">
-    <button class="pm-close" id="pmClose" aria-label="關閉">✕</button>
-    <div class="pm-eyebrow" id="pmEyebrow"></div>
-    <h2 id="pmTitle"></h2>
-    <div class="pm-sum" id="pmSum"></div>
-    <div id="pmBody"></div>
-    <div class="pm-nav">
-      <button class="pm-btn" id="pmPrev">← 上一階段</button>
-      <button class="pm-btn" id="pmNext">下一階段 →</button>
-    </div>
-  </div>
-</div>
-
-<script src="tooplate-2167-orbital-script.js"></script>
-<script>
-(function () {
-  var PHASES = {"1": [{"t": "鋼鐵人", "ty": "電影", "dt": "2008/5/2", "st": "已上映", "sy": "億萬富翁兼工程師東尼·史塔克在遭遇危機後打造高科技裝甲，成為鋼鐵人並開始對抗威脅。", "g": 585796247, "ep": null}, {"t": "無敵浩克", "ty": "電影", "dt": "2008/6/13", "st": "已上映", "sy": "科學家布魯斯·班納努力尋找解除伽瑪輻射影響的方法，同時躲避政府追捕。", "g": 264770996, "ep": null}, {"t": "鋼鐵人2", "ty": "電影", "dt": "2010/5/7", "st": "已上映", "sy": "東尼·史塔克公開身分後面臨政府壓力、健康問題，以及與史塔克家族過去有關的新敵人。", "g": 623933331, "ep": null}, {"t": "雷神索爾", "ty": "電影", "dt": "2011/5/6", "st": "已上映", "sy": "傲慢的阿斯嘉王子索爾被放逐到地球，逐漸理解責任並重新成為值得持有雷神之鎚的英雄。", "g": 449326618, "ep": null}, {"t": "美國隊長", "ty": "電影", "dt": "2011/7/22", "st": "已上映", "sy": "史蒂夫·羅傑斯接受超級士兵計畫後成為美國隊長，投入二戰並對抗九頭蛇。", "g": 370569774, "ep": null}, {"t": "復仇者聯盟", "ty": "電影", "dt": "2012/5/4", "st": "已上映", "sy": "鋼鐵人、雷神索爾、美國隊長、浩克等英雄首次集結，共同阻止洛基與外星軍隊入侵地球。", "g": 1520538536, "ep": null}], "2": [{"t": "鋼鐵人3", "ty": "電影", "dt": "2013/5/3", "st": "已上映", "sy": "東尼·史塔克在紐約事件後面對創傷與新的恐怖威脅，重新思考鋼鐵人裝甲對自己的意義。", "g": 1215577205, "ep": null}, {"t": "雷神索爾2：黑暗世界", "ty": "電影", "dt": "2013/11/8", "st": "已上映", "sy": "索爾與黑暗精靈首領馬勒基斯交戰，宇宙中的古老力量威脅九界。", "g": 644783140, "ep": null}, {"t": "美國隊長2：酷寒戰士", "ty": "電影", "dt": "2014/4/4", "st": "已上映", "sy": "史蒂夫·羅傑斯在現代世界面對神盾局內部危機，並與黑寡婦一起追查神秘的酷寒戰士。", "g": 714421503, "ep": null}, {"t": "星際異攻隊", "ty": "電影", "dt": "2014/8/1", "st": "已上映", "sy": "彼得·奎爾與一群性格迥異的宇宙罪犯被迫合作，阻止強大的宇宙力量落入敵手。", "g": 773350147, "ep": null}, {"t": "復仇者聯盟2：奧創紀元", "ty": "電影", "dt": "2015/5/1", "st": "已上映", "sy": "復仇者聯盟創造人工智慧奧創後，計畫失控，英雄們必須阻止其毀滅人類的企圖。", "g": 1405018048, "ep": null}, {"t": "蟻人", "ty": "電影", "dt": "2015/7/17", "st": "已上映", "sy": "竊賊史考特·朗穿上蟻人戰衣，在漢克·皮姆博士指導下成為英雄並執行一場高科技任務。", "g": 519311965, "ep": null}], "3": [{"t": "美國隊長3：英雄內戰", "ty": "電影", "dt": "2016/5/6", "st": "已上映", "sy": "超級英雄監管問題造成復仇者聯盟分裂，美國隊長與鋼鐵人站在不同立場。", "g": 1155046416, "ep": null}, {"t": "奇異博士", "ty": "電影", "dt": "2016/11/4", "st": "已上映", "sy": "外科醫師史蒂芬·史傳奇遭遇人生轉折後接觸神秘藝術，成為守護地球的魔法師。", "g": 677796076, "ep": null}, {"t": "星際異攻隊2", "ty": "電影", "dt": "2017/5/5", "st": "已上映", "sy": "星際異攻隊在宇宙中繼續冒險，彼得·奎爾也逐漸揭開自己的身世與家庭秘密。", "g": 863756051, "ep": null}, {"t": "蜘蛛人：返校日", "ty": "電影", "dt": "2017/7/7", "st": "已上映", "sy": "高中生彼得·帕克努力平衡校園生活與蜘蛛人身分，同時追查武器販子禿鷹。", "g": 880936784, "ep": null}, {"t": "雷神索爾3：諸神黃昏", "ty": "電影", "dt": "2017/11/3", "st": "已上映", "sy": "索爾被困在薩卡星，必須與浩克等盟友合作返回阿斯嘉，阻止海拉帶來的諸神黃昏。", "g": 855301806, "ep": null}, {"t": "黑豹", "ty": "電影", "dt": "2018/2/16", "st": "已上映", "sy": "帝查拉回到瓦干達繼承王位，同時面對來自過去的挑戰者與國家未來方向的衝突。", "g": 1349926083, "ep": null}, {"t": "復仇者聯盟：無限之戰", "ty": "電影", "dt": "2018/4/27", "st": "已上映", "sy": "薩諾斯尋找無限寶石，復仇者聯盟與銀河守護隊等英雄聯手阻止他取得足以改變宇宙的力量。", "g": 2052415039, "ep": null}, {"t": "蟻人與黃蜂女", "ty": "電影", "dt": "2018/7/6", "st": "已上映", "sy": "史考特·朗與霍普·凡·戴恩合作執行任務，探索量子領域並尋找霍普的母親珍妮特。", "g": 622674139, "ep": null}, {"t": "驚奇隊長", "ty": "電影", "dt": "2019/3/8", "st": "已上映", "sy": "卡蘿·丹佛斯在宇宙衝突中逐步找回自己的過去，並發現自己擁有強大的力量。", "g": 1131416446, "ep": null}, {"t": "復仇者聯盟：終局之戰", "ty": "電影", "dt": "2019/4/26", "st": "已上映", "sy": "在宇宙遭受重大損失後，倖存英雄集結並尋找扭轉局勢的方法，迎來無限傳奇的重要終章。", "g": 2799439100, "ep": null}, {"t": "蜘蛛人：離家日", "ty": "電影", "dt": "2019/7/2", "st": "已上映", "sy": "彼得·帕克前往歐洲旅行，卻被尼克·福瑞召集面對新的超自然威脅。", "g": 1132697856, "ep": null}], "4": [{"t": "汪達幻視", "ty": "影集", "dt": "2021/1/15", "st": "已完結", "sy": "汪達與幻視過著看似完美的郊區生活，但異常現象逐漸揭開一個與汪達力量有關的真相。", "g": null, "ep": "9"}, {"t": "獵鷹與酷寒戰士", "ty": "影集", "dt": "2021/3/19", "st": "已完結", "sy": "山姆·威爾遜與巴奇·巴恩斯合作處理全球危機，並面對美國隊長傳承所帶來的問題。", "g": null, "ep": "6"}, {"t": "洛基 第一季", "ty": "影集", "dt": "2021/6/9", "st": "已完結", "sy": "另一條時間線的洛基被時間變異管理局帶走，開始探索時間線與多重宇宙的秘密。", "g": null, "ep": "6"}, {"t": "黑寡婦", "ty": "電影", "dt": "2021/7/9", "st": "已上映", "sy": "娜塔莎·羅曼諾夫面對過去的陰影，與舊家人重新合作，對抗紅房子的勢力。", "g": 379751655, "ep": null}, {"t": "無限可能：假如...？ 第一季", "ty": "影集", "dt": "2021/8/11", "st": "已完結", "sy": "觀察者探索不同的宇宙，想像如果 MCU 中關鍵事件以不同方式發生會產生什麼結果。", "g": null, "ep": "9"}, {"t": "尚氣與十環傳奇", "ty": "電影", "dt": "2021/9/3", "st": "已上映", "sy": "尚氣被迫面對自己的家族與神秘十環組織，並重新理解自己的身分與能力。", "g": 432243292, "ep": null}, {"t": "永恆族", "ty": "電影", "dt": "2021/11/5", "st": "已上映", "sy": "一群古老的外星英雄長久隱藏在人類社會中，面對新的宇宙危機後重新團結。", "g": 402064899, "ep": null}, {"t": "鷹眼", "ty": "影集", "dt": "2021/11/24", "st": "已完結", "sy": "克林特·巴頓在紐約過節期間遇上年輕弓箭手凱特·畢夏普，兩人共同面對危機。", "g": null, "ep": "6"}, {"t": "蜘蛛人：無家日", "ty": "電影", "dt": "2021/12/17", "st": "已上映", "sy": "彼得·帕克請求奇異博士施法改變自己的身分曝光危機，卻意外打開多重宇宙的入口。", "g": 1921400703, "ep": null}, {"t": "月光騎士", "ty": "影集", "dt": "2022/3/30", "st": "已完結", "sy": "馬克·史貝特與其他身分捲入與埃及神祇相關的神秘事件。", "g": null, "ep": "6"}, {"t": "奇異博士2：失控多重宇宙", "ty": "電影", "dt": "2022/5/6", "st": "已上映", "sy": "奇異博士探索多重宇宙，與不同世界的英雄共同面對跨宇宙威脅。", "g": 955775804, "ep": null}, {"t": "驚奇少女", "ty": "影集", "dt": "2022/6/8", "st": "已完結", "sy": "熱愛超級英雄的卡瑪拉·克汗突然獲得能力，開始探索自己的身分與家族歷史。", "g": null, "ep": "6"}, {"t": "雷神索爾：愛與雷霆", "ty": "電影", "dt": "2022/7/8", "st": "已上映", "sy": "索爾再次踏上宇宙冒險，並與珍·佛斯特重新相遇，共同面對屠神者格爾。", "g": 760928081, "ep": null}, {"t": "律師女浩克", "ty": "影集", "dt": "2022/8/18", "st": "已完結", "sy": "律師珍妮佛·華特斯意外獲得浩克能力，在法律工作與超級英雄生活間尋找平衡。", "g": null, "ep": "9"}, {"t": "黑豹2：瓦干達萬歲", "ty": "電影", "dt": "2022/11/11", "st": "已上映", "sy": "瓦干達在失去國王後面臨新的威脅，並與海底王國塔洛坎產生衝突。", "g": 859208836, "ep": null}], "5": [{"t": "蟻人與黃蜂女：量子狂熱", "ty": "電影", "dt": "2023/2/17", "st": "已上映", "sy": "蟻人一家進入量子領域，遇到征服者康與神秘的新世界。", "g": 476071180, "ep": null}, {"t": "星際異攻隊3", "ty": "電影", "dt": "2023/5/5", "st": "已上映", "sy": "星際異攻隊為拯救火箭展開任務，也逐步揭開他的身世與創造者。", "g": 845555777, "ep": null}, {"t": "秘密入侵", "ty": "影集", "dt": "2023/6/21", "st": "已完結", "sy": "尼克·福瑞發現變形斯庫魯人滲透地球，必須在全球危機擴大前找出真相。", "g": null, "ep": "6"}, {"t": "洛基 第二季", "ty": "影集", "dt": "2023/10/5", "st": "已完結", "sy": "洛基繼續與時間變異管理局合作，試圖修復時間線並阻止多重宇宙危機。", "g": null, "ep": "6"}, {"t": "驚奇隊長2", "ty": "電影", "dt": "2023/11/10", "st": "已上映", "sy": "驚奇隊長、驚奇少女與莫妮卡·藍博共同面對宇宙威脅，三人的力量也產生特殊連結。", "g": 206136825, "ep": null}, {"t": "無限可能：假如...？ 第二季", "ty": "影集", "dt": "2023/12/22", "st": "已完結", "sy": "觀察者繼續探索不同宇宙，呈現更多改變關鍵事件後的全新世界。", "g": null, "ep": "9"}, {"t": "回聲女", "ty": "影集", "dt": "2024/1/9", "st": "已完結", "sy": "瑪雅·羅培茲回到家鄉面對自己的過去、家族與威爾遜·費斯克留下的影響。", "g": null, "ep": "5"}, {"t": "死侍與金鋼狼", "ty": "電影", "dt": "2024/7/26", "st": "已上映", "sy": "死侍捲入時間變異管理局的事件，並與金鋼狼合作，展開跨越宇宙的冒險。", "g": 1338073645, "ep": null}, {"t": "阿嘉莎：無所不在", "ty": "影集", "dt": "2024/9/18", "st": "已完結", "sy": "阿嘉莎·哈克尼斯在汪達幻視事件後重新踏上神秘之路，尋找力量與答案。", "g": null, "ep": "9"}, {"t": "無限可能：假如...？ 第三季", "ty": "影集", "dt": "2024/12/22", "st": "已完結", "sy": "觀察者繼續探索更多平行宇宙與不同版本的漫威英雄。", "g": null, "ep": "8"}, {"t": "蜘蛛人：你的友好鄰居 第一季", "ty": "影集", "dt": "2025/1/25", "st": "已完結", "sy": "以另一個宇宙為背景，重新描寫彼得·帕克成為蜘蛛人的早期歷程。", "g": null, "ep": "10"}, {"t": "美國隊長：無畏新世界", "ty": "電影", "dt": "2025/2/14", "st": "已上映", "sy": "山姆·威爾遜正式承擔美國隊長的使命，在國際事件中面對新的政治與超級英雄危機。", "g": 415101577, "ep": null}, {"t": "夜魔俠：重生 第一季", "ty": "影集", "dt": "2025/3/4", "st": "已完結", "sy": "麥特·默多克以律師身分與夜魔俠身分守護紐約，並再次與威爾遜·費斯克產生衝突。", "g": null, "ep": "9"}, {"t": "雷霆特攻隊*", "ty": "電影", "dt": "2025/5/2", "st": "已上映", "sy": "一群背景各異的反英雄被迫組成團隊，執行一項高風險任務。", "g": 382436917, "ep": null}, {"t": "鋼鐵心", "ty": "影集", "dt": "2025/6/24", "st": "已完結", "sy": "天才發明家莉莉·威廉斯利用自己的工程能力打造高科技裝甲，踏上屬於自己的英雄道路。", "g": null, "ep": "6"}], "6": [{"t": "驚奇4超人：第一步", "ty": "電影", "dt": "2025/7/25", "st": "已上映", "sy": "以復古未來主義風格呈現的世界中，驚奇4超人面對吞噬行星的宇宙存在行星吞噬者。", "g": 521858728, "ep": null}, {"t": "瓦干達之眼", "ty": "動畫影集", "dt": "2025/8/1", "st": "已完結", "sy": "聚焦瓦干達歷史中不同時代的勇士，探索他們在世界各地執行任務的故事。", "g": null, "ep": "4"}, {"t": "漫威喪屍", "ty": "動畫影集", "dt": "2025/9/24", "st": "已完結", "sy": "在充滿喪屍的世界中，倖存的英雄與倖存者面對新的危機。", "g": null, "ep": "4"}, {"t": "神力人", "ty": "影集", "dt": "2026/1/27", "st": "已完結", "sy": "演員兼特技演員西蒙·威廉斯捲入超級英雄世界，故事聚焦名聲、演藝圈與英雄身分。", "g": null, "ep": "8"}, {"t": "夜魔俠：重生 第二季", "ty": "影集", "dt": "2026/3/24", "st": "已完結", "sy": "夜魔俠故事延續，麥特·默多克與紐約的新舊勢力持續交鋒。", "g": null, "ep": "8"}, {"t": "蜘蛛人：重生日", "ty": "電影", "dt": "2026/7/31", "st": "已上映", "sy": "彼得·帕克將在全新的生活階段面對新的超級英雄事件。", "g": 2495949664, "ep": null}, {"t": "幻視任務", "ty": "影集", "dt": "2026/10/14", "st": "即將上映", "sy": "幻視相關故事的後續作品，將延伸第四階段留下的角色與故事線。", "g": null, "ep": "8"}, {"t": "復仇者聯盟：末日崛起", "ty": "電影", "dt": "2026/12/18", "st": "即將上映", "sy": "復仇者聯盟系列的新篇章，將把多個漫威角色與故事線帶到更大的衝突中。", "g": null, "ep": null}, {"t": "蜘蛛人：你的友好鄰居 第二季", "ty": "影集", "dt": "2027年1月", "st": "製作中", "sy": "動畫系列第二季，延續另一宇宙中彼得·帕克的成長與英雄冒險。", "g": null, "ep": "未知"}, {"t": "復仇者聯盟：秘密戰爭", "ty": "電影", "dt": "2027/12/17", "st": "製作中", "sy": "", "g": null, "ep": null}]};
-  var NAMES = ['', '第一階段', '第二階段', '第三階段', '第四階段', '第五階段', '第六階段'];
-  var TYPE_ORDER = ['電影', '影集', '動畫影集'];
-
-  var modal = document.getElementById('phaseModal');
-  var card = document.getElementById('pmCard');
-  var body = document.getElementById('pmBody');
-  var prevBtn = document.getElementById('pmPrev');
-  var nextBtn = document.getElementById('pmNext');
-  var current = 0, lastFocus = null;
-
-  function el(tag, cls, text) {
-    var e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (text != null) e.textContent = text;
-    return e;
-  }
-
-  function render(n) {
-    current = n;
-    var list = PHASES[n] || [];
-    document.getElementById('pmEyebrow').textContent = (n <= 3 ? '無限傳奇' : '多重宇宙傳奇') + ' // PHASE ' + n;
-    document.getElementById('pmTitle').textContent = NAMES[n];
-
-    var counts = [];
-    TYPE_ORDER.forEach(function (t) {
-      var c = list.filter(function (d) { return d.ty === t; }).length;
-      if (c) counts.push(t + ' ' + c);
-    });
-    document.getElementById('pmSum').textContent = '共 ' + list.length + ' 部作品（' + counts.join('、') + '）';
-
-    body.innerHTML = '';
-    TYPE_ORDER.forEach(function (t) {
-      var items = list.filter(function (d) { return d.ty === t; });
-      if (!items.length) return;
-      var g = el('div', 'pm-group');
-      g.appendChild(el('h3', null, '// ' + t));
-      var grid = el('div', 'pm-list');
-      items.forEach(function (d) {
-        var it = el('div', 'pm-item');
-        it.appendChild(el('h4', null, d.t));
-        var meta = el('div', 'pm-meta');
-        meta.appendChild(el('span', null, d.dt === '未知' ? '日期未定' : d.dt));
-        var done = d.st === '已上映' || d.st === '已完結';
-        meta.appendChild(el('span', 'pm-tag ' + (done ? 'done' : (d.st === '即將上映' ? 'soon' : '')), d.st));
-        it.appendChild(meta);
-        if (d.sy) it.appendChild(el('p', null, d.sy));
-        if (d.g) it.appendChild(el('div', 'pm-stat', '票房 US$' + d.g.toLocaleString('en-US')));
-        if (d.ep) it.appendChild(el('div', 'pm-stat', /^\d+$/.test(d.ep) ? '共 ' + d.ep + ' 集' : '集數未定'));
-        grid.appendChild(it);
-      });
-      g.appendChild(grid);
-      body.appendChild(g);
-    });
-
-    prevBtn.disabled = n <= 1;
-    nextBtn.disabled = n >= 6;
-    card.scrollTop = 0;
-  }
-
-  function openPhase(n, trigger) {
-    if (!modal.classList.contains('open')) lastFocus = trigger || document.activeElement;
-    render(n);
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-    document.getElementById('pmClose').focus({ preventScroll: true });
-  }
-  function closeModal() {
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
-  }
-
-  /* 區分「點擊」與「拖曳旋轉」：移動超過 6px 視為拖曳，不開啟視窗 */
-  var ring = document.getElementById('ring');
-  var downX = 0, downY = 0;
-  ring.addEventListener('pointerdown', function (e) { downX = e.clientX; downY = e.clientY; });
-  ring.addEventListener('click', function (e) {
-    var panel = e.target.closest('.panel');
-    if (!panel) return;
-    if (Math.abs(e.clientX - downX) > 6 || Math.abs(e.clientY - downY) > 6) return;
-    openPhase(parseInt(panel.getAttribute('data-phase'), 10), panel);
-  });
-  ring.addEventListener('keydown', function (e) {
-    var panel = e.target.closest('.panel');
-    if (panel && (e.key === 'Enter' || e.key === ' ')) {
-      e.preventDefault();
-      openPhase(parseInt(panel.getAttribute('data-phase'), 10), panel);
-    }
-  });
-
-  document.getElementById('pmClose').addEventListener('click', closeModal);
-  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
-  prevBtn.addEventListener('click', function () { if (current > 1) render(current - 1); });
-  nextBtn.addEventListener('click', function () { if (current < 6) render(current + 1); });
-  document.addEventListener('keydown', function (e) {
-    if (!modal.classList.contains('open')) return;
-    if (e.key === 'Escape') closeModal();
-    else if (e.key === 'ArrowLeft' && current > 1) render(current - 1);
-    else if (e.key === 'ArrowRight' && current < 6) render(current + 1);
-  });
-})();
-</script>
-
-</body>
-</html>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orbital 3D Carousel by Tooplate</title>
-
-<!--
-
-    Tooplate 2167 Orbital
-
-    https://www.tooplate.com/view/2167-orbital
-
-    Free HTML CSS Template
-
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -441,21 +22,27 @@ body.modal-open { overflow: hidden; }
 <div class="stars"></div>
 
 <nav class="nav">
-  <div class="logo"><a href="#" class="logo">ORBITAL <span>// 297</span></a></div>
+  <div class="logo"><a href="#" class="logo">漫威影視作品 <span>📘</span></a></div>
   <ul class="nav-links">
-    <li><a href="#system">System</a></li>
-    <li><a href="#capabilities">Capabilities</a></li>
-    <li><a href="#launch">Launch</a></li>
+    <li><a href="#phase1">第一階段</a></li>
+    <li><a href="#phase2">第二階段</a></li>
+    <li><a href="#phase3">第三階段</a></li>
+    <li><a href="#phase4">第四階段</a></li>
+    <li><a href="#phase5">第五階段</a></li>
+    <li><a href="#phase6">第六階段</a></li>
   </ul>
-  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+  <button class="menu-toggle" aria-label="打開選單" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <div class="mobile-menu">
-  <a href="#system">System</a>
-  <a href="#capabilities">Capabilities</a>
-  <a href="#launch">Launch</a>
+  <a href="#phase1">第一階段</a>
+  <a href="#phase2">第二階段</a>
+  <a href="#phase3">第三階段</a>
+  <a href="#phase4">第四階段</a>
+  <a href="#phase5">第五階段</a>
+  <a href="#phase6">第六階段</a>
 </div>
 
 <header class="hero">
@@ -464,228 +51,191 @@ body.modal-open { overflow: hidden; }
       <div class="ring-tilt">
         <div class="ring" id="ring">
 
-          <div class="panel">
+          <!-- 1. 第一階段 -->
+          <div class="panel" id="panel-phase1">
             <div class="panel-face panel-face--text">
               <div class="p-num">01</div>
               <div>
-                <div class="p-label">VECTOR</div>
-                <div class="p-meta">AXIS-X</div>
+                <div class="p-label">第一階段</div>
+                <div class="p-meta">PHASE 1</div>
               </div>
             </div>
             <div class="panel-face panel-face--image">
-              <img src="images/image-01.jpg" alt="Vector" loading="lazy">
+              <img src="images/image-01.jpg" alt="第一階段" loading="lazy">
               <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">01</span>VECTOR</div>
+              <div class="panel-cap"><span class="p-num">01</span>第一階段</div>
             </div>
           </div>
 
-          <div class="panel">
+          <!-- 2. 第二階段 -->
+          <div class="panel" id="panel-phase2">
             <div class="panel-face panel-face--text">
               <div class="p-num">02</div>
               <div>
-                <div class="p-label">PRISM</div>
-                <div class="p-meta">SPECTRA</div>
+                <div class="p-label">第二階段</div>
+                <div class="p-meta">PHASE 2</div>
               </div>
             </div>
             <div class="panel-face panel-face--image">
-              <img src="images/image-02.jpg" alt="Prism" loading="lazy">
+              <img src="images/image-02.jpg" alt="第二階段" loading="lazy">
               <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">02</span>PRISM</div>
+              <div class="panel-cap"><span class="p-num">02</span>第二階段</div>
             </div>
           </div>
 
-          <div class="panel">
+          <!-- 3. 第三階段 -->
+          <div class="panel" id="panel-phase3">
             <div class="panel-face panel-face--text">
               <div class="p-num">03</div>
               <div>
-                <div class="p-label">PULSE</div>
-                <div class="p-meta">120 BPM</div>
+                <div class="p-label">第三階段</div>
+                <div class="p-meta">PHASE 3</div>
               </div>
             </div>
             <div class="panel-face panel-face--image">
-              <img src="images/image-03.jpg" alt="Pulse" loading="lazy">
+              <img src="images/image-03.jpg" alt="第三階段" loading="lazy">
               <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">03</span>PULSE</div>
+              <div class="panel-cap"><span class="p-num">03</span>第三階段</div>
             </div>
           </div>
 
-          <div class="panel">
+          <!-- 4. 第四階段 -->
+          <div class="panel" id="panel-phase4">
             <div class="panel-face panel-face--text">
               <div class="p-num">04</div>
               <div>
-                <div class="p-label">NOVA</div>
-                <div class="p-meta">IGNITION</div>
+                <div class="p-label">第四階段</div>
+                <div class="p-meta">PHASE 4</div>
               </div>
             </div>
             <div class="panel-face panel-face--image">
-              <img src="images/image-04.jpg" alt="Nova" loading="lazy">
+              <img src="images/image-04.jpg" alt="第四階段" loading="lazy">
               <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">04</span>NOVA</div>
+              <div class="panel-cap"><span class="p-num">04</span>第四階段</div>
             </div>
           </div>
 
-          <div class="panel">
+          <!-- 5. 第五階段 -->
+          <div class="panel" id="panel-phase5">
             <div class="panel-face panel-face--text">
               <div class="p-num">05</div>
               <div>
-                <div class="p-label">FLUX</div>
-                <div class="p-meta">STREAM</div>
+                <div class="p-label">第五階段</div>
+                <div class="p-meta">PHASE 5</div>
               </div>
             </div>
             <div class="panel-face panel-face--image">
-              <img src="images/image-05.jpg" alt="Flux" loading="lazy">
+              <img src="images/image-05.jpg" alt="第五階段" loading="lazy">
               <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">05</span>FLUX</div>
+              <div class="panel-cap"><span class="p-num">05</span>第五階段</div>
             </div>
           </div>
 
-          <div class="panel">
+          <!-- 6. 第六階段 -->
+          <div class="panel" id="panel-phase6">
             <div class="panel-face panel-face--text">
               <div class="p-num">06</div>
               <div>
-                <div class="p-label">HALO</div>
-                <div class="p-meta">RADIANT</div>
+                <div class="p-label">第六階段</div>
+                <div class="p-meta">PHASE 6</div>
               </div>
             </div>
             <div class="panel-face panel-face--image">
-              <img src="images/image-06.jpg" alt="Halo" loading="lazy">
+              <img src="images/image-06.jpg" alt="第六階段" loading="lazy">
               <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">06</span>HALO</div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">07</div>
-              <div>
-                <div class="p-label">DRIFT</div>
-                <div class="p-meta">ZERO-G</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-07.jpg" alt="Drift" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">07</span>DRIFT</div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">08</div>
-              <div>
-                <div class="p-label">ECHO</div>
-                <div class="p-meta">RESONANT</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-08.jpg" alt="Echo" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">08</span>ECHO</div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">09</div>
-              <div>
-                <div class="p-label">ZENITH</div>
-                <div class="p-meta">APEX</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-09.jpg" alt="Zenith" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">09</span>ZENITH</div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panel-face panel-face--text">
-              <div class="p-num">10</div>
-              <div>
-                <div class="p-label">CORE</div>
-                <div class="p-meta">CENTER</div>
-              </div>
-            </div>
-            <div class="panel-face panel-face--image">
-              <img src="images/image-10.jpg" alt="Core" loading="lazy">
-              <div class="panel-scrim"></div>
-              <div class="panel-cap"><span class="p-num">10</span>CORE</div>
+              <div class="panel-cap"><span class="p-num">06</span>第六階段</div>
             </div>
           </div>
 
         </div>
       </div>
       <div class="hero-text">
-        <div class="eyebrow">PRESENTATION SYSTEM 297</div>
-        <h1>ELEVATE YOUR VISION</h1>
-        <p>A holographic interface built from light, glass and motion. Everything here orbits a single idea.</p>
+        <div class="eyebrow">// MARVEL CINEMATIC UNIVERSE</div>
+        <h1>漫威影視作品📘</h1>
+        <p style="white-space: pre-line;">phase1 到 phase3 為無限傳奇
+phase4 到 phase6 為多重宇宙傳奇
+phase7 以後為變種人傳奇。</p>
       </div>
     </div>
   </div>
   <div class="hero-controls">
     <div class="ctrl">
-      <span class="ctrl-label">VISUALS</span>
-      <button class="switch" id="visualsSwitch" role="switch" aria-checked="true" aria-label="Toggle image visuals">
+      <span class="ctrl-label">圖片模式</span>
+      <button class="switch" id="visualsSwitch" role="switch" aria-checked="true" aria-label="切換圖片視覺">
         <span class="knob"></span>
       </button>
     </div>
     <div class="ctrl">
-      <span class="ctrl-label">ZOOM</span>
-      <button class="switch" id="zoomSwitch" role="switch" aria-checked="false" aria-label="Zoom ring 24 percent larger">
+      <span class="ctrl-label">縮放</span>
+      <button class="switch" id="zoomSwitch" role="switch" aria-checked="false" aria-label="縮放環狀檢視">
         <span class="knob"></span>
       </button>
     </div>
     <div class="ctrl">
-      <span class="ctrl-label">SPACING</span>
-      <div class="spacing" role="group" aria-label="Ring spacing">
-        <button class="spacing-step" data-space="0" aria-label="Tight spacing"><i></i></button>
-        <button class="spacing-step is-active" data-space="1" aria-label="Default spacing"><i></i></button>
-        <button class="spacing-step" data-space="2" aria-label="Wide spacing"><i></i></button>
+      <span class="ctrl-label">間距</span>
+      <div class="spacing" role="group" aria-label="環狀間距">
+        <button class="spacing-step" data-space="0" aria-label="緊密"><i></i></button>
+        <button class="spacing-step is-active" data-space="1" aria-label="預設"><i></i></button>
+        <button class="spacing-step" data-space="2" aria-label="寬鬆"><i></i></button>
       </div>
     </div>
   </div>
   <div class="scroll-cue">
-    <span>SCROLL</span>
+    <span>向下捲動</span>
     <div class="line"></div>
   </div>
 </header>
 
-<section class="section" id="system">
+<section class="section" id="phase1">
   <div class="section-head reveal">
-    <div class="eyebrow">// THE SYSTEM</div>
-    <h2>Designed in three dimensions, delivered in one file.</h2>
-    <p>ORBITAL is a self-contained presentation surface. No frameworks, no dependencies, no build step. Pure HTML, CSS and JavaScript engineered to feel like a window into deep space.</p>
-  </div>
-  <div class="features" id="capabilities">
-    <div class="feature reveal">
-      <div class="f-index">01 // DEPTH</div>
-      <h3>True 3D space</h3>
-      <p>Glass panels are positioned with real CSS transforms and preserve-3d, orbiting the core in a continuous, GPU-driven loop.</p>
-    </div>
-    <div class="feature reveal">
-      <div class="f-index">02 // RESPONSE</div>
-      <h3>Kinetic parallax</h3>
-      <p>The entire ring leans toward your cursor, tilting on two axes with an expensive easing curve that makes every motion feel weighted.</p>
-    </div>
-    <div class="feature reveal">
-      <div class="f-index">03 // LIGHT</div>
-      <h3>Neon glassmorphism</h3>
-      <p>Layered backdrop blur, gradient borders and inner glow give each surface the quiet shimmer of frosted holographic glass.</p>
-    </div>
+    <div class="eyebrow">// PHASE 1</div>
+    <h2>第一階段作品列表</h2>
+    <p>無限傳奇開端，包含《鋼鐵人》、《無敵浩克》、《雷神索爾》、《美國隊長》及《復仇者聯盟》等經典作品。</p>
   </div>
 </section>
 
-<section class="cta" id="launch">
-  <div class="reveal">
-    <h2>Ready to orbit?</h2>
-    <p>Drop ORBITAL into any project and ship a hero that people remember long after they leave.</p>
-    <a href="#" class="btn">START BUILDING</a>
+<section class="section" id="phase2">
+  <div class="section-head reveal">
+    <div class="eyebrow">// PHASE 2</div>
+    <h2>第二階段作品列表</h2>
+    <p>無限傳奇擴展，加入《星際異攻隊》、《蟻人》等全新英雄陣容。</p>
+  </div>
+</section>
+
+<section class="section" id="phase3">
+  <div class="section-head reveal">
+    <div class="eyebrow">// PHASE 3</div>
+    <h2>第三階段作品列表</h2>
+    <p>無限傳奇巔峰，包含《奇異博士》、《黑豹》、《蜘蛛人》以及終極對決《復仇者聯盟：終局之戰》。</p>
+  </div>
+</section>
+
+<section class="section" id="phase4">
+  <div class="section-head reveal">
+    <div class="eyebrow">// PHASE 4</div>
+    <h2>第四階段作品列表</h2>
+    <p>多重宇宙傳奇序幕，開啟影集與多元宇宙故事線。</p>
+  </div>
+</section>
+
+<section class="section" id="phase5">
+  <div class="section-head reveal">
+    <div class="eyebrow">// PHASE 5</div>
+    <h2>第五階段作品列表</h2>
+    <p>多重宇宙傳奇發展，持續擴張漫威宇宙觀與新一代英雄故事。</p>
+  </div>
+</section>
+
+<section class="section" id="phase6">
+  <div class="section-head reveal">
+    <div class="eyebrow">// PHASE 6</div>
+    <h2>第六階段作品列表</h2>
+    <p>多重宇宙傳奇高潮，將迎來《復仇者聯盟：毀滅日》與《復仇者聯盟：秘密戰爭》。</p>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="logo"><a href="#" class="logo">ORBITAL <span>// 297</span></a></div>
+  <div class="logo"><a href="#" class="logo">漫威影視作品 <span>📘</span></a></div>
   <div class="credit">3D Orbital Carousel by <a href="https://www.tooplate.com" rel="nofollow noopener" target="_blank">Tooplate</a></div>
 </footer>
 
