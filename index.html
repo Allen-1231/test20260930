@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tooplate-2167-orbital-style.css">
 <style>
-  /* 針對 MCU 資料展現補充的自訂微調樣式，完全相容於原有 CSS */
+  /* MCU 作品卡片與網格樣式 */
   .mcu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -108,7 +108,8 @@
     <li><a href="#phase4">第四階段</a></li>
     <li><a href="#phase5">第五階段</a></li>
     <li><a href="#phase6">第六階段</a></li>
-    <li><a href="#other">其他階段</a></li>
+    <li><a href="#phase7">第七階段</a></li>
+    <li><a href="#phase-unknown">未知階段</a></li>
   </ul>
   <button class="menu-toggle" aria-label="打開選單" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -122,7 +123,8 @@
   <a href="#phase4">第四階段</a>
   <a href="#phase5">第五階段</a>
   <a href="#phase6">第六階段</a>
-  <a href="#other">其他階段</a>
+  <a href="#phase7">第七階段</a>
+  <a href="#phase-unknown">未知階段</a>
 </div>
 
 <header class="hero">
@@ -131,6 +133,7 @@
       <div class="ring-tilt">
         <div class="ring" id="ring">
 
+          <!-- 旋轉方格 1 -->
           <div class="panel" onclick="location.href='#phase1'">
             <div class="panel-face panel-face--text">
               <div class="p-num">01</div>
@@ -146,6 +149,7 @@
             </div>
           </div>
 
+          <!-- 旋轉方格 2 -->
           <div class="panel" onclick="location.href='#phase2'">
             <div class="panel-face panel-face--text">
               <div class="p-num">02</div>
@@ -161,6 +165,7 @@
             </div>
           </div>
 
+          <!-- 旋轉方格 3 -->
           <div class="panel" onclick="location.href='#phase3'">
             <div class="panel-face panel-face--text">
               <div class="p-num">03</div>
@@ -176,6 +181,7 @@
             </div>
           </div>
 
+          <!-- 旋轉方格 4 -->
           <div class="panel" onclick="location.href='#phase4'">
             <div class="panel-face panel-face--text">
               <div class="p-num">04</div>
@@ -191,6 +197,7 @@
             </div>
           </div>
 
+          <!-- 旋轉方格 5 -->
           <div class="panel" onclick="location.href='#phase5'">
             <div class="panel-face panel-face--text">
               <div class="p-num">05</div>
@@ -206,6 +213,7 @@
             </div>
           </div>
 
+          <!-- 旋轉方格 6 -->
           <div class="panel" onclick="location.href='#phase6'">
             <div class="panel-face panel-face--text">
               <div class="p-num">06</div>
@@ -218,6 +226,38 @@
               <img src="images/image-06.jpg" alt="第六階段" loading="lazy">
               <div class="panel-scrim"></div>
               <div class="panel-cap"><span class="p-num">06</span>第六階段</div>
+            </div>
+          </div>
+
+          <!-- 旋轉方格 7 -->
+          <div class="panel" onclick="location.href='#phase7'">
+            <div class="panel-face panel-face--text">
+              <div class="p-num">07</div>
+              <div>
+                <div class="p-label">第七階段</div>
+                <div class="p-meta">變種人傳奇</div>
+              </div>
+            </div>
+            <div class="panel-face panel-face--image">
+              <img src="images/image-07.jpg" alt="第七階段" loading="lazy">
+              <div class="panel-scrim"></div>
+              <div class="panel-cap"><span class="p-num">07</span>第七階段</div>
+            </div>
+          </div>
+
+          <!-- 旋轉方格 8 -->
+          <div class="panel" onclick="location.href='#phase-unknown'">
+            <div class="panel-face panel-face--text">
+              <div class="p-num">08</div>
+              <div>
+                <div class="p-label">未知階段</div>
+                <div class="p-meta">開發中項目</div>
+              </div>
+            </div>
+            <div class="panel-face panel-face--image">
+              <img src="images/image-08.jpg" alt="未知階段" loading="lazy">
+              <div class="panel-scrim"></div>
+              <div class="panel-cap"><span class="p-num">08</span>未知階段</div>
             </div>
           </div>
 
@@ -264,14 +304,14 @@ phase7 以後為變種人傳奇。</p>
 <section class="section" id="phase1">
   <div class="section-head reveal">
     <div class="eyebrow">// PHASE 1</div>
-    <h2>第一階段（無限傳奇）</h2>
-    <p>6 部作品，依上映日期排序：</p>
+    <h2>第一階段作品列表</h2>
+    <p>共 6 部作品，已按上映日期排序：</p>
   </div>
   <div class="mcu-grid">
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">1. 鋼鐵人</div>
+          <div class="mcu-title">鋼鐵人</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -282,14 +322,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$585,796,247</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">2. 無敵浩克</div>
+          <div class="mcu-title">無敵浩克</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -300,14 +338,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$264,770,996</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">3. 鋼鐵人2</div>
+          <div class="mcu-title">鋼鐵人2</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -318,14 +354,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$623,933,331</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">4. 雷神索爾</div>
+          <div class="mcu-title">雷神索爾</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -336,14 +370,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$449,326,618</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">5. 美國隊長</div>
+          <div class="mcu-title">美國隊長</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -354,14 +386,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$370,569,774</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">6. 復仇者聯盟</div>
+          <div class="mcu-title">復仇者聯盟</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -372,7 +402,6 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,520,538,536</span>
-        <span>評價：0.0</span>
       </div>
     </div>
   </div>
@@ -382,14 +411,14 @@ phase7 以後為變種人傳奇。</p>
 <section class="section" id="phase2">
   <div class="section-head reveal">
     <div class="eyebrow">// PHASE 2</div>
-    <h2>第二階段（無限傳奇）</h2>
-    <p>6 部作品，依上映日期排序：</p>
+    <h2>第二階段作品列表</h2>
+    <p>共 6 部作品，已按上映日期排序：</p>
   </div>
   <div class="mcu-grid">
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">7. 鋼鐵人3</div>
+          <div class="mcu-title">鋼鐵人3</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -400,14 +429,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,215,577,205</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">8. 雷神索爾2：黑暗世界</div>
+          <div class="mcu-title">雷神索爾2：黑暗世界</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -418,14 +445,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$644,783,140</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">9. 美國隊長2：酷寒戰士</div>
+          <div class="mcu-title">美國隊長2：酷寒戰士</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -436,14 +461,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$714,421,503</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">10. 星際異攻隊</div>
+          <div class="mcu-title">星際異攻隊</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -454,14 +477,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$773,350,147</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">11. 復仇者聯盟2：奧創紀元</div>
+          <div class="mcu-title">復仇者聯盟2：奧創紀元</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -472,14 +493,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,405,018,048</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">12. 蟻人</div>
+          <div class="mcu-title">蟻人</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -490,7 +509,6 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$519,311,965</span>
-        <span>評價：0.0</span>
       </div>
     </div>
   </div>
@@ -500,14 +518,14 @@ phase7 以後為變種人傳奇。</p>
 <section class="section" id="phase3">
   <div class="section-head reveal">
     <div class="eyebrow">// PHASE 3</div>
-    <h2>第三階段（無限傳奇）</h2>
-    <p>11 部作品，依上映日期排序：</p>
+    <h2>第三階段作品列表</h2>
+    <p>共 11 部作品，已按上映日期排序：</p>
   </div>
   <div class="mcu-grid">
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">13. 美國隊長3：英雄內戰</div>
+          <div class="mcu-title">美國隊長3：英雄內戰</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -518,14 +536,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,155,046,416</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">14. 奇異博士</div>
+          <div class="mcu-title">奇異博士</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -536,14 +552,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$677,796,076</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">15. 星際異攻隊2</div>
+          <div class="mcu-title">星際異攻隊2</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -554,14 +568,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$863,756,051</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">16. 蜘蛛人：返校日</div>
+          <div class="mcu-title">蜘蛛人：返校日</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -572,14 +584,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$880,936,784</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">17. 雷神索爾3：諸神黃昏</div>
+          <div class="mcu-title">雷神索爾3：諸神黃昏</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -590,14 +600,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$855,301,806</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">18. 黑豹</div>
+          <div class="mcu-title">黑豹</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -608,14 +616,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,349,926,083</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">19. 復仇者聯盟：無限之戰</div>
+          <div class="mcu-title">復仇者聯盟：無限之戰</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -626,14 +632,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$2,052,415,039</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">20. 蟻人與黃蜂女</div>
+          <div class="mcu-title">蟻人與黃蜂女</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -644,14 +648,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$622,674,139</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">21. 驚奇隊長</div>
+          <div class="mcu-title">驚奇隊長</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -662,14 +664,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,131,416,446</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">22. 復仇者聯盟：終局之戰</div>
+          <div class="mcu-title">復仇者聯盟：終局之戰</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -680,14 +680,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$2,799,439,100</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">23. 蜘蛛人：離家日</div>
+          <div class="mcu-title">蜘蛛人：離家日</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -698,7 +696,6 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,132,697,856</span>
-        <span>評價：0.0</span>
       </div>
     </div>
   </div>
@@ -708,14 +705,14 @@ phase7 以後為變種人傳奇。</p>
 <section class="section" id="phase4">
   <div class="section-head reveal">
     <div class="eyebrow">// PHASE 4</div>
-    <h2>第四階段（多重宇宙傳奇）</h2>
-    <p>15 部作品，依上映日期排序：</p>
+    <h2>第四階段作品列表</h2>
+    <p>共 15 部作品，已按上映日期排序：</p>
   </div>
   <div class="mcu-grid">
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">31. 汪達幻視</div>
+          <div class="mcu-title">汪達幻視</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -725,14 +722,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">汪達與幻視過著看似完美的郊區生活，但異常現象逐漸揭開一個與汪達力量有關的真相。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">32. 獵鷹與酷寒戰士</div>
+          <div class="mcu-title">獵鷹與酷寒戰士</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -742,14 +738,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">山姆·威爾遜與巴奇·巴恩斯合作處理全球危機，並面對美國隊長傳承所帶來的問題。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">33. 洛基 第一季</div>
+          <div class="mcu-title">洛基 第一季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -759,14 +754,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">另一條時間線的洛基被時間變異管理局帶走，開始探索時間線與多重宇宙的秘密。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">24. 黑寡婦</div>
+          <div class="mcu-title">黑寡婦</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -777,14 +771,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$379,751,655</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">34. 無限可能：假如...？ 第一季</div>
+          <div class="mcu-title">無限可能：假如...？ 第一季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -794,14 +786,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">觀察者探索不同的宇宙，想像如果 MCU 中關鍵事件以不同方式發生會產生什麼結果。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">25. 尚氣與十環傳奇</div>
+          <div class="mcu-title">尚氣與十環傳奇</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -812,14 +803,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$432,243,292</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">26. 永恆族</div>
+          <div class="mcu-title">永恆族</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -830,14 +819,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$402,064,899</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">35. 鷹眼</div>
+          <div class="mcu-title">鷹眼</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -847,14 +834,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">克林特·巴頓在紐約過節期間遇上年輕弓箭手凱特·畢夏普，兩人共同面對危機。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">27. 蜘蛛人：無家日</div>
+          <div class="mcu-title">蜘蛛人：無家日</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -865,14 +851,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,921,400,703</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">36. 月光騎士</div>
+          <div class="mcu-title">月光騎士</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -882,14 +866,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">馬克·史貝特與其他身分捲入與埃及神祇相關的神秘事件。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">28. 奇異博士2：失控多重宇宙</div>
+          <div class="mcu-title">奇異博士2：失控多重宇宙</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -900,14 +883,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$955,775,804</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">37. 驚奇少女</div>
+          <div class="mcu-title">驚奇少女</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -917,14 +898,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">熱愛超級英雄的卡瑪拉·克汗突然獲得能力，開始探索自己的身分與家族歷史。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">29. 雷神索爾：愛與雷霆</div>
+          <div class="mcu-title">雷神索爾：愛與雷霆</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -935,14 +915,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$760,928,081</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">38. 律師女浩克</div>
+          <div class="mcu-title">律師女浩克</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -952,14 +930,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">律師珍妮佛·華特斯意外獲得浩克能力，在法律工作與超級英雄生活間尋找平衡。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">30. 黑豹2：瓦干達萬歲</div>
+          <div class="mcu-title">黑豹2：瓦干達萬歲</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -970,7 +947,6 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$859,208,836</span>
-        <span>評價：0.0</span>
       </div>
     </div>
   </div>
@@ -980,14 +956,14 @@ phase7 以後為變種人傳奇。</p>
 <section class="section" id="phase5">
   <div class="section-head reveal">
     <div class="eyebrow">// PHASE 5</div>
-    <h2>第五階段（多重宇宙傳奇）</h2>
-    <p>15 部作品，依上映日期排序：</p>
+    <h2>第五階段作品列表</h2>
+    <p>共 15 部作品，已按上映日期排序：</p>
   </div>
   <div class="mcu-grid">
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">39. 蟻人與黃蜂女：量子狂熱</div>
+          <div class="mcu-title">蟻人與黃蜂女：量子狂熱</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -998,14 +974,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$476,071,180</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">40. 星際異攻隊3</div>
+          <div class="mcu-title">星際異攻隊3</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -1016,14 +990,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$845,555,777</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">45. 秘密入侵</div>
+          <div class="mcu-title">秘密入侵</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1033,14 +1005,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">尼克·福瑞發現變形斯庫魯人滲透地球，必須在全球危機擴大前找出真相。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">46. 洛基 第二季</div>
+          <div class="mcu-title">洛基 第二季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1050,14 +1021,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">洛基繼續與時間變異管理局合作，試圖修復時間線並阻止多重宇宙危機。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">41. 驚奇隊長2</div>
+          <div class="mcu-title">驚奇隊長2</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -1068,14 +1038,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$206,136,825</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">47. 無限可能：假如...？ 第二季</div>
+          <div class="mcu-title">無限可能：假如...？ 第二季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1085,14 +1053,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">觀察者繼續探索不同宇宙，呈現更多改變關鍵事件後的全新世界。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">48. 回聲女</div>
+          <div class="mcu-title">回聲女</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1102,14 +1069,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">瑪雅·羅培茲回到家鄉面對自己的過去、家族與威爾遜·費斯克留下的影響。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">42. 死侍與金鋼狼</div>
+          <div class="mcu-title">死侍與金鋼狼</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -1120,14 +1086,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$1,338,073,645</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">49. 阿嘉莎：無所不在</div>
+          <div class="mcu-title">阿嘉莎：無所不在</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1137,14 +1101,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">阿嘉莎·哈克尼斯在汪達幻視事件後重新踏上神秘之路，尋找力量與答案。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">53. 無限可能：假如...？ 第三季</div>
+          <div class="mcu-title">無限可能：假如...？ 第三季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1154,14 +1117,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">觀察者繼續探索更多平行宇宙與不同版本的漫威英雄。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">50. 蜘蛛人：你的友好鄰居 第一季</div>
+          <div class="mcu-title">蜘蛛人：你的友好鄰居 第一季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1171,14 +1133,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">以另一個宇宙為背景，重新描寫彼得·帕克成為蜘蛛人的早期歷程。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">43. 美國隊長：無畏新世界</div>
+          <div class="mcu-title">美國隊長：無畏新世界</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -1189,14 +1150,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$415,101,577</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">51. 夜魔俠：重生 第一季</div>
+          <div class="mcu-title">夜魔俠：重生 第一季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1206,14 +1165,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">麥特·默多克以律師身分與夜魔俠身分守護紐約，並再次與威爾遜·費斯克產生衝突。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">44. 雷霆特攻隊*</div>
+          <div class="mcu-title">雷霆特攻隊*</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -1224,14 +1182,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$382,436,917</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">52. 鋼鐵心</div>
+          <div class="mcu-title">鋼鐵心</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1241,7 +1197,7 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">天才發明家莉莉·威廉斯利用自己的工程能力打造高科技裝甲，踏上屬於自己的英雄道路。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
   </div>
@@ -1251,14 +1207,14 @@ phase7 以後為變種人傳奇。</p>
 <section class="section" id="phase6">
   <div class="section-head reveal">
     <div class="eyebrow">// PHASE 6</div>
-    <h2>第六階段（多重宇宙傳奇）</h2>
-    <p>10 部作品，依上映日期排序：</p>
+    <h2>第六階段作品列表</h2>
+    <p>共 10 部作品，已按上映日期排序：</p>
   </div>
   <div class="mcu-grid">
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">60. 驚奇4超人：第一步</div>
+          <div class="mcu-title">驚奇4超人：第一步</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -1269,14 +1225,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$521,858,728</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">54. 瓦干達之眼</div>
+          <div class="mcu-title">瓦干達之眼</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1286,14 +1240,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">聚焦瓦干達歷史中不同時代的勇士，探索他們在世界各地執行任務的故事。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">55. 漫威喪屍</div>
+          <div class="mcu-title">漫威喪屍</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1303,14 +1256,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">在充滿喪屍的世界中，倖存的英雄與倖存者面對新的危機。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">56. 神力人</div>
+          <div class="mcu-title">神力人</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1320,14 +1272,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">演員兼特技演員西蒙·威廉斯捲入超級英雄世界，故事聚焦名聲、演藝圈與英雄身分。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">57. 夜魔俠：重生 第二季</div>
+          <div class="mcu-title">夜魔俠：重生 第二季</div>
           <span class="mcu-badge status-done">已完結</span>
         </div>
         <div class="mcu-meta">
@@ -1337,14 +1288,13 @@ phase7 以後為變種人傳奇。</p>
         <div class="mcu-desc">夜魔俠故事延續，麥特·默多克與紐約的新舊勢力持續交鋒。</div>
       </div>
       <div class="mcu-extra">
-        <span>評價：0.0</span>
+        <span>狀態：已完結</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">61. 蜘蛛人：重生日</div>
+          <div class="mcu-title">蜘蛛人：重生日</div>
           <span class="mcu-badge status-done">已上映</span>
         </div>
         <div class="mcu-meta">
@@ -1355,14 +1305,12 @@ phase7 以後為變種人傳奇。</p>
       </div>
       <div class="mcu-extra">
         <span>票房：$2,495,949,664</span>
-        <span>評價：0.0</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">58. 幻視任務</div>
+          <div class="mcu-title">幻視任務</div>
           <span class="mcu-badge">即將上映</span>
         </div>
         <div class="mcu-meta">
@@ -1375,11 +1323,10 @@ phase7 以後為變種人傳奇。</p>
         <span>狀態：即將上映</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">62. 復仇者聯盟：末日崛起</div>
+          <div class="mcu-title">復仇者聯盟：末日崛起</div>
           <span class="mcu-badge">即將上映</span>
         </div>
         <div class="mcu-meta">
@@ -1392,11 +1339,10 @@ phase7 以後為變種人傳奇。</p>
         <span>狀態：即將上映</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">59. 蜘蛛人：你的友好鄰居 第二季</div>
+          <div class="mcu-title">蜘蛛人：你的友好鄰居 第二季</div>
           <span class="mcu-badge">製作中</span>
         </div>
         <div class="mcu-meta">
@@ -1409,11 +1355,10 @@ phase7 以後為變種人傳奇。</p>
         <span>狀態：製作中</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">63. 復仇者聯盟：秘密戰爭</div>
+          <div class="mcu-title">復仇者聯盟：秘密戰爭</div>
           <span class="mcu-badge">製作中</span>
         </div>
         <div class="mcu-meta">
@@ -1429,61 +1374,78 @@ phase7 以後為變種人傳奇。</p>
   </div>
 </section>
 
-<!-- 其他階段 -->
-<section class="section" id="other">
+<!-- 第七階段 -->
+<section class="section" id="phase7">
   <div class="section-head reveal">
-    <div class="eyebrow">// FUTURE & UNKNOWN PHASES</div>
-    <h2>第七階段與未知階段</h2>
-    <p>未來計畫與開發中作品：</p>
+    <div class="eyebrow">// PHASE 7</div>
+    <h2>第七階段作品列表</h2>
+    <p>共 3 部作品，已按上映日期排序：</p>
   </div>
   <div class="mcu-grid">
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">64. X戰警</div>
-          <span class="mcu-badge">第七階段 / 製作中</span>
-        </div>
-        <div class="mcu-meta">
-          <span>📅 2028/5/5</span>
-          <span>🎬 電影</span>
-        </div>
-        <div class="mcu-desc">變種人傳奇開端作品。</div>
-      </div>
-    </div>
-
-    <div class="mcu-card">
-      <div>
-        <div class="mcu-card-header">
-          <div class="mcu-title">65. 黑豹3</div>
-          <span class="mcu-badge">第七階段 / 開發中</span>
-        </div>
-        <div class="mcu-meta">
-          <span>📅 2028/12/15</span>
-          <span>🎬 電影</span>
-        </div>
-        <div class="mcu-desc">黑豹系列第三部作品。</div>
-      </div>
-    </div>
-
-    <div class="mcu-card">
-      <div>
-        <div class="mcu-card-header">
-          <div class="mcu-title">66. 惡靈戰警</div>
-          <span class="mcu-badge">第七階段 / 開發中</span>
+          <div class="mcu-title">惡靈戰警</div>
+          <span class="mcu-badge">開發中</span>
         </div>
         <div class="mcu-meta">
           <span>📅 2028年</span>
           <span>🎬 電影</span>
         </div>
-        <div class="mcu-desc">惡靈戰警全新獨立電影。</div>
+        <div class="mcu-desc">惡靈戰警全新獨立電影計畫。</div>
+      </div>
+      <div class="mcu-extra">
+        <span>狀態：開發中</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">67. 裝甲戰爭</div>
-          <span class="mcu-badge">未知階段 / 開發中</span>
+          <div class="mcu-title">X戰警</div>
+          <span class="mcu-badge">製作中</span>
+        </div>
+        <div class="mcu-meta">
+          <span>📅 2028/5/5</span>
+          <span>🎬 電影</span>
+        </div>
+        <div class="mcu-desc">變種人傳奇開端作品，正式將X戰警團隊引入漫威電影宇宙。</div>
+      </div>
+      <div class="mcu-extra">
+        <span>狀態：製作中</span>
+      </div>
+    </div>
+    <div class="mcu-card">
+      <div>
+        <div class="mcu-card-header">
+          <div class="mcu-title">黑豹3</div>
+          <span class="mcu-badge">開發中</span>
+        </div>
+        <div class="mcu-meta">
+          <span>📅 2028/12/15</span>
+          <span>🎬 電影</span>
+        </div>
+        <div class="mcu-desc">黑豹系列第三部作品，繼續延伸瓦干達的故事。</div>
+      </div>
+      <div class="mcu-extra">
+        <span>狀態：開發中</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 未知階段 -->
+<section class="section" id="phase-unknown">
+  <div class="section-head reveal">
+    <div class="eyebrow">// PHASE UNKNOWN</div>
+    <h2>未知階段作品列表</h2>
+    <p>共 3 部作品，已按上映日期排序：</p>
+  </div>
+  <div class="mcu-grid">
+    <div class="mcu-card">
+      <div>
+        <div class="mcu-card-header">
+          <div class="mcu-title">裝甲戰爭</div>
+          <span class="mcu-badge">開發中</span>
         </div>
         <div class="mcu-meta">
           <span>📅 未知</span>
@@ -1491,33 +1453,40 @@ phase7 以後為變種人傳奇。</p>
         </div>
         <div class="mcu-desc">探索東尼·史塔克的技術落入壞人手中後帶來的影響。</div>
       </div>
-    </div>
-
-    <div class="mcu-card">
-      <div>
-        <div class="mcu-card-header">
-          <div class="mcu-title">68. 未命名新星電影</div>
-          <span class="mcu-badge">未知階段 / 開發中</span>
-        </div>
-        <div class="mcu-meta">
-          <span>📅 未知</span>
-          <span>🎬 電影</span>
-        </div>
-        <div class="mcu-desc">新星（Nova）角色獨立電影。</div>
+      <div class="mcu-extra">
+        <span>狀態：開發中</span>
       </div>
     </div>
-
     <div class="mcu-card">
       <div>
         <div class="mcu-card-header">
-          <div class="mcu-title">69. 尚氣2</div>
-          <span class="mcu-badge">未知階段 / 開發中</span>
+          <div class="mcu-title">未命名新星電影</div>
+          <span class="mcu-badge">開發中</span>
         </div>
         <div class="mcu-meta">
           <span>📅 未知</span>
           <span>🎬 電影</span>
         </div>
-        <div class="mcu-desc">尚氣系列續集。</div>
+        <div class="mcu-desc">新星（Nova）角色獨立電影發展計畫。</div>
+      </div>
+      <div class="mcu-extra">
+        <span>狀態：開發中</span>
+      </div>
+    </div>
+    <div class="mcu-card">
+      <div>
+        <div class="mcu-card-header">
+          <div class="mcu-title">尚氣2</div>
+          <span class="mcu-badge">開發中</span>
+        </div>
+        <div class="mcu-meta">
+          <span>📅 未知</span>
+          <span>🎬 電影</span>
+        </div>
+        <div class="mcu-desc">尚氣系列個人電影續集。</div>
+      </div>
+      <div class="mcu-extra">
+        <span>狀態：開發中</span>
       </div>
     </div>
   </div>
