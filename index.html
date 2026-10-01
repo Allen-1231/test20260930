@@ -147,14 +147,14 @@
     box-shadow: 0 0 50px rgba(6, 182, 212, 0.2);
     border-radius: 18px;
     width: 100%;
-    max-width: 800px;
+    max-width: 820px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
     padding: 30px;
     display: grid;
     grid-template-columns: 280px 1fr;
-    gap: 24px;
+    gap: 28px;
   }
   @media (max-width: 768px) {
     .modal-content {
@@ -177,7 +177,7 @@
   }
   .modal-img-box {
     width: 100%;
-    height: 360px;
+    height: 380px;
     border-radius: 12px;
     overflow: hidden;
     background: rgba(255,255,255,0.05);
@@ -192,26 +192,28 @@
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
+  
+  /* 個人影評紫色外框區塊 (放最下方) */
   .modal-review-box {
     background: rgba(139, 92, 246, 0.08);
     border: 1px solid rgba(139, 92, 246, 0.25);
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin: 16px 0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 20px;
   }
   .modal-review-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--violet);
-    margin-bottom: 6px;
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
   }
   .modal-rating {
     color: #fbbf24; /* 金黃色星星 */
     letter-spacing: 2px;
+    font-weight: bold;
   }
 
   body.in-subpage .hero {
@@ -409,7 +411,7 @@ phase7 以後為變種人傳奇。</p>
   <div class="section-head">
     <div class="eyebrow">// PHASE 1</div>
     <h2>第一階段作品列表</h2>
-    <p>點擊任意卡片可查看劇情詳述、照片與個人影評：</p>
+    <p>點擊任意卡片可查看劇情概述、照片與個人影評：</p>
   </div>
   <div class="mcu-grid" id="grid-phase1"></div>
 </main>
@@ -419,7 +421,7 @@ phase7 以後為變種人傳奇。</p>
   <div class="section-head">
     <div class="eyebrow">// PHASE 2</div>
     <h2>第二階段作品列表</h2>
-    <p>點擊任意卡片可查看劇情詳述、照片與個人影評：</p>
+    <p>點擊任意卡片可查看劇情概述、照片與個人影評：</p>
   </div>
   <div class="mcu-grid" id="grid-phase2"></div>
 </main>
@@ -429,7 +431,7 @@ phase7 以後為變種人傳奇。</p>
   <div class="section-head">
     <div class="eyebrow">// PHASE 3</div>
     <h2>第三階段作品列表</h2>
-    <p>點擊任意卡片可查看劇情詳述、照片與個人影評：</p>
+    <p>點擊任意卡片可查看劇情概述、照片與個人影評：</p>
   </div>
   <div class="mcu-grid" id="grid-phase3"></div>
 </main>
@@ -439,7 +441,7 @@ phase7 以後為變種人傳奇。</p>
   <div class="section-head">
     <div class="eyebrow">// PHASE 4</div>
     <h2>第四階段作品列表</h2>
-    <p>點擊任意卡片可查看劇情詳述、照片與個人影評：</p>
+    <p>點擊任意卡片可查看劇情概述、照片與個人影評：</p>
   </div>
   <div class="mcu-grid" id="grid-phase4"></div>
 </main>
@@ -449,7 +451,7 @@ phase7 以後為變種人傳奇。</p>
   <div class="section-head">
     <div class="eyebrow">// PHASE 5</div>
     <h2>第五階段作品列表</h2>
-    <p>點擊任意卡片可查看劇情詳述、照片與個人影評：</p>
+    <p>點擊任意卡片可查看劇情概述、照片與個人影評：</p>
   </div>
   <div class="mcu-grid" id="grid-phase5"></div>
 </main>
@@ -459,7 +461,7 @@ phase7 以後為變種人傳奇。</p>
   <div class="section-head">
     <div class="eyebrow">// PHASE 6</div>
     <h2>第六階段作品列表</h2>
-    <p>點擊任意卡片可查看劇情詳述、照片與個人影評：</p>
+    <p>點擊任意卡片可查看劇情概述、照片與個人影評：</p>
   </div>
   <div class="mcu-grid" id="grid-phase6"></div>
 </main>
@@ -469,7 +471,7 @@ phase7 以後為變種人傳奇。</p>
   <div class="section-head">
     <div class="eyebrow">// PHASE 7 & UNKNOWN</div>
     <h2>第七階段與未知階段作品列表</h2>
-    <p>點擊任意卡片可查看劇情詳述、照片與個人影評：</p>
+    <p>點擊任意卡片可查看劇情概述、照片與個人影評：</p>
   </div>
   <div class="mcu-grid" id="grid-phase7"></div>
 </main>
@@ -478,30 +480,37 @@ phase7 以後為變種人傳奇。</p>
 <div class="modal-overlay" id="detail-modal" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal()">✕</button>
+    
+    <!-- 左側圖片區 -->
     <div class="modal-img-box">
       <img id="modal-img" src="" alt="作品劇照" onerror="this.src='images/image-01.jpg'">
     </div>
+
+    <!-- 右側詳細內容區 -->
     <div class="modal-info-box">
       <div class="modal-info-title" id="modal-title">作品名稱</div>
+      
+      <!-- 頂部資訊 (右上方包含個人評分星級) -->
       <div class="mcu-meta">
-        <span id="modal-date">📅 上映日期</span>
-        <span id="modal-type">🎬 類型</span>
-        <span id="modal-extra">💰 票房</span>
+        <span id="modal-date">📅 上映日期：</span>
+        <span id="modal-type">🎬 類型：</span>
+        <span id="modal-extra">💰 票房：</span>
+        <span>⭐ 個人評分：<span class="modal-rating" id="modal-rating">★★★★</span></span>
       </div>
 
-      <div class="modal-review-box">
-        <div class="modal-review-title">
-          <span>個人影評 & 評分</span>
-          <span class="modal-rating" id="modal-rating">★★★★★</span>
-        </div>
-        <p id="modal-review" style="color: var(--dim); font-size: 0.92rem; line-height: 1.5;">個人心得評價填寫於此...</p>
-      </div>
-
-      <div style="margin-top: 15px;">
-        <div style="font-family:'JetBrains Mono'; font-size:12px; color:var(--cyan); margin-bottom:6px;">劇情詳述</div>
+      <!-- 中間：劇情概述 (已由「劇情詳述」更名為「劇情概述」) -->
+      <div style="margin-top: 18px;">
+        <div style="font-family:'JetBrains Mono'; font-size:13px; color:var(--cyan); margin-bottom:6px; font-weight:600;">劇情概述</div>
         <p id="modal-desc" style="color: var(--dim); font-size: 0.94rem; line-height: 1.6;"></p>
       </div>
+
+      <!-- 下方：個人影評紫色區塊 (票房 ➔ 劇情概述 ➔ 個人影評) -->
+      <div class="modal-review-box">
+        <div class="modal-review-title">個人影評</div>
+        <p id="modal-review" style="color: var(--dim); font-size: 0.92rem; line-height: 1.5;"></p>
+      </div>
     </div>
+
   </div>
 </div>
 
@@ -513,7 +522,7 @@ phase7 以後為變種人傳奇。</p>
 <script src="tooplate-2167-orbital-script.js"></script>
 
 <script>
-  // 69 部作品資料庫（結構已為您預留照片路徑 image、個人影評 review、與評分 rating）
+  // 69 部作品資料庫
   const mcuData = {
     "phase1": [
       {"id": 1, "title": "鋼鐵人", "type": "電影", "date": "2008/5/2", "status": "已上映", "box_office": "$585,796,247", "desc": "億萬富翁兼工程師東尼·史塔克在遭遇危機後打造高科技裝甲，成為鋼鐵人並開始對抗威脅。", "review": "漫威電影宇宙的元祖開山巨作！小勞勃道尼完美演繹了東尼史塔克。", "rating": 5, "image": "images/mcu_1.jpg"},
@@ -600,7 +609,7 @@ phase7 以後為變種人傳奇。</p>
     ]
   };
 
-  // 1. 渲染字卡清單（精簡版字卡：只顯示片名、上映日、類型、狀態、票房）
+  // 1. 渲染字卡清單
   function renderCards() {
     for (const [key, list] of Object.entries(mcuData)) {
       const container = document.getElementById('grid-' + key);
@@ -635,7 +644,7 @@ phase7 以後為變種人傳奇。</p>
     }
   }
 
-  // 2. 開啟詳細頁 Modal 視窗
+  // 2. 開啟詳細頁 Modal 視窗 (照圖片規格新版佈局)
   function openModal(groupKey, itemId) {
     const item = mcuData[groupKey].find(x => x.id === itemId);
     if (!item) return;
@@ -645,18 +654,20 @@ phase7 以後為變種人傳奇。</p>
     document.getElementById('modal-type').innerText = '🎬 類型：' + (item.episodes ? `${item.type} (${item.episodes})` : item.type);
     document.getElementById('modal-extra').innerText = item.box_office ? '💰 票房：' + item.box_office : '📌 狀態：' + item.status;
     
+    // 右上方評分星級
+    const ratingStars = item.rating > 0 ? '★'.repeat(Math.floor(item.rating)) + (item.rating % 1 !== 0 ? '½' : '') : '未評分';
+    document.getElementById('modal-rating').innerText = ratingStars;
+
     // 設定圖片
     const imgEl = document.getElementById('modal-img');
     imgEl.src = item.image || 'images/image-01.jpg';
     imgEl.alt = item.title;
 
-    // 設定星級與評價
-    const ratingStars = item.rating > 0 ? '★'.repeat(Math.floor(item.rating)) + (item.rating % 1 !== 0 ? '½' : '') : '未評分';
-    document.getElementById('modal-rating').innerText = ratingStars;
-    document.getElementById('modal-review').innerText = item.review || '尚無影評紀錄';
+    // 中間：劇情概述
+    document.getElementById('modal-desc').innerText = item.desc || '暫無劇情概述';
 
-    // 設定劇情詳述
-    document.getElementById('modal-desc').innerText = item.desc || '暫無劇情詳述';
+    // 下方：個人影評
+    document.getElementById('modal-review').innerText = item.review || '尚無個人影評紀錄';
 
     document.getElementById('detail-modal').classList.add('active');
   }
